@@ -1,5 +1,10 @@
 body {
   margin: 0;
+  width: 100vw;
+ 
+
+  overflow: hidden;
+  overflow-y: auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -7,7 +12,70 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.navbar{
+  height: 8vh;
+  font-size: 12px;
+}
+
+@media (max-width:720px){
+ .navbar{
+  height: auto;
+ }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.text-editor .CodeMirror{
+  height: 70vh;
+ 
+  
+  /* color:#fff; */
+}
+.results {
+  
+  display: flex;
+  flex-direction: column;
+
+}
+.results__header{
+  font-size: 1rem;
+  background: #eee;
+  padding: .5rem 1rem;
+  margin: 0;
+}
+
+.results__area{
+ font-size: 12px;
+  width: 50vw;
+  height: 22vh;
+  border:none;
+  border-right: .5px solid #fff;
+  padding: .5rem;
+  color: #fff
+}
+.run_btn{
+  border-radius: 10rem !important;
+  font-size: 12px !important;
+}
+
+.nav_item{
+  color: #fff !important;
+
+}
+.navbar-expand-md .navbar-nav .dropdown-menu {
+  font-size: 12px
+}
+
+
+.dark .results__area{  
+ background-color: #202020;
+  outline: none;
+}
+
+.dark .results__header{
+  color:#fff;
+  background-color: #222222;
+}
+
