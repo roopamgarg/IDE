@@ -41,7 +41,7 @@ PYTHON --> text/x-python
 export default class TextEditor extends Component{
     
     state = {
-        code: "// Code",
+        code: this.props.code,
     }
 
     
@@ -54,8 +54,8 @@ export default class TextEditor extends Component{
         };
         return <CodeMirror 
                     className="text-editor"
-                    autoSave={true} 
-                    value={this.props.code} 
+                   
+                    value={this.state.code} 
                     onChange={this.props.updateCode} 
                     options={options} 
                 />

@@ -87,7 +87,7 @@ export default class Navigationbar extends React.Component {
             </Nav>
             <Nav className="ml-auto pr-4">
             <NavItem style={{color:"#fff"}}>
-              Made With <i class="fas fa-heart"></i> By <img width={"50px"}  src={"https://iosd.tech/img/iosd/iosd-white.png"} alt="logo"/>
+              Made With <i className="fas fa-heart"></i> By <img width={"50px"}  src={"https://iosd.tech/img/iosd/iosd-white.png"} alt="logo"/>
               </NavItem>
             </Nav>
           {/* </Collapse> */}

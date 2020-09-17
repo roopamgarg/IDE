@@ -5,19 +5,15 @@ import Navigationbar from './components/Navbar';
 import TextEditor from './components/TextEditor';
 import Input from './components/Input';
 import Output from './components/Output';
-
+import languages from './languages'
 
 class App extends Component {
   state = {
-    code:"//code",
+    code:languages[0].code,
     input:"",
     output:"",
     theme:"3024-night",
-    selectedLanguage:{
-        id: 4,
-        name: "C (gcc 7.2.0)",
-        mimeType:"text/x-csrc"
-      }
+    selectedLanguage:languages[0]
     
   }
 
@@ -47,6 +43,9 @@ class App extends Component {
       while(!flag){
       const result = await fetch(`https://api.judge0.com/submissions/${res.token}?base64_encoded=false`)
                      .then((res)=>res.json())
+                     .catch((err)=>{
+                       console.log(err)
+                     })
      this.setState({
             output:result.status.description
       })
@@ -76,8 +75,11 @@ class App extends Component {
     })
   }
   setLanguage = (language) =>{
+   
+    const code = language.code
     this.setState({
-      selectedLanguage:language
+      selectedLanguage:language,
+      code
     })
   }
   updateCode = (newCode) => {
@@ -92,7 +94,8 @@ class App extends Component {
   }
   render(){
     const {code, input, output, selectedLanguage,theme} = this.state
-  return (
+
+    return (
     
     <div className="dark">
      
